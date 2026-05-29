@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡単おみくじアプリ</title>
+    <style>
+        /* CSS: 見た目を整える */
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        h1 { color: #333; }
+        #result {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 1.5rem 0;
+            height: 3rem;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover { background-color: #2980b9; }
+        button:active { transform: scale(0.95); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>今日の日運</h1>
+        <!-- 結果が表示される場所 -->
+        <div id="result">？</div>
+        <button onclick="getOmikuji()">おみくじを引く</button>
+    </div>
+
+    <script>
+        // JavaScript: 動きをつける
+        function getOmikuji() {
+            const results = ["大吉", "中吉", "小吉", "吉", "末吉", "凶"];
+            
+            // 0から結果の数（6）までのランダムな数字を作る
+            const randomIndex = Math.floor(Math.random() * results.length);
+            
+            // 結果を表示エリアに書き込む
+            const resultDisplay = document.getElementById("result");
+            resultDisplay.innerText = results[randomIndex];
+
+            // ちょっとした演出：色を変える
+            if (results[randomIndex] === "大吉") {
+                resultDisplay.style.color = "#ffd700"; // 金色
+            } else {
+                resultDisplay.style.color = "#e74c3c"; // 赤色
+            }
+        }
+    </script>
+
+</body>
+</html>
