@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本格おみくじアプリ (分割版)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>新春おみくじ</h1>
+
+        <div id="setup-view">
+            <div id="omikuji-box" class="box-area">📦</div>
+            <button id="draw-btn" onclick="drawOmikuji()">おみくじを引く</button>
+        </div>
+
+        <div id="result-view" class="result-area">
+            <div class="box-area">📜</div>
+            <div>＜運勢＞</div>
+            <div id="result-unsei" class="unsei"></div>
+
+            <div class="grid-table">
+                <div class="grid-item">
+                    <h3>願い事</h3>
+                    <p id="res-negai"></p>
+                </div>
+                <div class="grid-item">
+                    <h3>健康</h3>
+                    <p id="res-kenko"></p>
+                </div>
+                <div class="grid-item">
+                    <h3>恋愛</h3>
+                    <p id="res-renai"></p>
+                </div>
+                <div class="grid-item">
+                    <h3>仕事</h3>
+                    <p id="res-shigoto"></p>
+                </div>
+            </div>
+
+            <button onclick="resetOmikuji()">もう一度引く</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
