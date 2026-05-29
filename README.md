@@ -1,2 +1,0 @@
-# omikuji
-test
